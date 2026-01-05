@@ -1,5 +1,7 @@
 sudo -- sh -c 'echo "net.ipv4.ip_unprivileged_port_start=440" > /etc/sysctl.conf'
 
+podman volume create n8n
+ln -s ./n8n /home/udo/.local/share/containers/storage/volumes/n8n/_data/
 
 podman pod create -p 443:443 n8n
 
